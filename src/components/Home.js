@@ -1,13 +1,15 @@
 import React from "react";
+import Links from "./Links";
 
-function Home({ color, username, city }) {
+function About({ bio, links }) {
   return (
-    <div id="home">
-      <h1 style={{ color: color }}>
-        {username} is a Web Developer from {city}
-      </h1>
+    <div id="about">
+      <h2>About Me</h2>
+      {bio && bio.length > 1 ? <p>{bio}</p> : null}
+      <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
+      <Links github={links.github} linkedin={links.linkedin} />
     </div>
   );
 }
 
-export default Home;
+export default About;
